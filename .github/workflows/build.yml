@@ -65,17 +65,16 @@ jobs:
         run: |
           ls -R
           
-      # - name: Archive Release
-      #   uses: thedoctor0/zip-release@master
-      #   with:
-      #     type: 'zip'
-      #     path: dcraw*
-      #     directory: "dcraw-9.28.0/cmake-build"
-      #     filename: "dcraw-${{ github.ref_name }}-${{ matrix.container }}.zip"
+      - name: Archive Release
+        uses: thedoctor0/zip-release@master
+        with:
+          type: 'zip'
+          directory: "dtc-1.7.1/build"
+          filename: "dtc-${{ github.ref_name }}-${{ matrix.container }}.zip"
           
-      # - name: Release prebuilt
-      #   uses: ncipollo/release-action@v1
-      #   with:
-      #     artifacts: "dcraw-9.28.0/cmake-build/dcraw-${{ github.ref_name }}-${{ matrix.container }}.zip"
-      #     allowUpdates: true
-      #     token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Release prebuilt
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "dtc-1.7.1/build/dtc-${{ github.ref_name }}-${{ matrix.container }}.zip"
+          allowUpdates: true
+          token: ${{ secrets.GITHUB_TOKEN }}
