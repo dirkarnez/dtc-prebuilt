@@ -70,11 +70,11 @@ jobs:
         with:
           type: 'zip'
           directory: "dtc-1.7.1/build"
-          filename: "dtc-${{ github.ref_name }}-${{ matrix.container }}.zip"
+          filename: "dtc-${{ github.ref_name }}-${{ matrix.sys }}.zip"
           
       - name: Release prebuilt
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "dtc-1.7.1/build/dtc-${{ github.ref_name }}-${{ matrix.container }}.zip"
+          artifacts: "dtc-1.7.1/build/dtc-${{ github.ref_name }}-${{ matrix.sys }}.zip"
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
