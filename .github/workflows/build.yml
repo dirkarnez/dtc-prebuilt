@@ -60,7 +60,7 @@ jobs:
           meson setup -Dtools=true -Dtests=false build
           meson compile -C build
 
-      - name: '🚧 Build'
+      - name: Print Directory
         working-directory: dtc-1.7.1
         run: |
           ls -R
